@@ -7,4 +7,5 @@ for i in range(1, 10000):
 
     r = requests.get(url)
     if r.status_code == 200:
-        print(f"{url} - valid")
+        with open(f"u{i:04d}.png", "wb") as image:
+            image.write(r.content)
