@@ -33,3 +33,9 @@ for i in range(1, 10000):
 
         # Report about downloaded emoji
         logger.info(f"Emoji #{i:04d} downloaded! {9999 - i} left")
+
+    elif r.status_code == 404:
+        logger.warning(f"Emoji #{i:04d} not exists!  {9999 - i} left")
+
+    else:
+        logger.error(f"Emoji #{i:04d} status code: {r.status_code}")
